@@ -1,0 +1,29 @@
+body {
+  margin-top: 10px;
+}
+
+h2 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+}
+
+a { 
+    color: blue;
+    text-decoration: none;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid blue;
+    border-radius: 3px;
+    background-color: lightblue;
+}
+
+a.active {
+  color: green;
+  border-color: green;
+  background-color: lightgreen;
+}
+
+#links {
+  display: flex;
+  flex-wrap: wrap;
+}

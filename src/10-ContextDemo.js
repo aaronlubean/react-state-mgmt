@@ -1,18 +1,28 @@
-import React, { useState, useReducer } from 'react'
+import React, { useState, createContext, useContext } from 'react'
 
-function CounterSummary({ pluses, minuses }) {
+const SummaryContext = createContext()
+function SummaryProvider({ children }) {
+    const [pluses, setPluses] = useState(0)
+    const [minuses, setMinuses] = useState(0)
+    const context = { pluses, setPluses, minuses, setMinuses }
+    return <SummaryContext.Provider value={context}>{children}</SummaryContext.Provider>
+}
+
+function CounterSummary() {
+    const { pluses, minuses } = useContext(SummaryContext)
     return <h3>Summary ~ Pluses: {pluses} ~ Minuses: {minuses}</h3>
 }
 
-function Counter({ label, summaryDispatch }) {
+function Counter({ label }) {
+    const { setPluses, setMinuses } = useContext(SummaryContext)
     const [count, setCount] = useState(0)
-    const decrement = () => { 
+    const decrement = () => {
         setCount(c => c - 1)
-        summaryDispatch({ type: "ADD_MINUS" }) 
+        setMinuses(m => m + 1)
     }
     const increment = () => {
         setCount(c => c + 1)
-        summaryDispatch({ type: "ADD_PLUS" }) 
+        setPluses(p => p + 1)
     }
     return (
         <>
@@ -23,26 +33,13 @@ function Counter({ label, summaryDispatch }) {
     )
 }
 
-const initialState = { pluses: 0, minuses: 0 }
-const reducer = (state, action) => {
-    switch (action.type) {
-        case 'ADD_PLUS':
-            return { ...state, pluses: state.pluses + 1 }
-        case 'ADD_MINUS':
-            return { ...state, minuses: state.minuses + 1 }
-        default:
-            throw new Error(`Unsupported action type of ${action.type}`)
-    }
-}
-
 export default function ContextDemo() {
-    const [summaryState, summaryDispatch] = useReducer(reducer, initialState)
     return (
-        <>
+        <SummaryProvider>
             <h2>context</h2>
-            <CounterSummary pluses={summaryState.pluses} minuses={summaryState.minuses} />
-            <Counter label='"A"' summaryDispatch={summaryDispatch} /><br /><br />
-            <Counter label='"B"' summaryDispatch={summaryDispatch} />
-        </>
+            <CounterSummary />
+            <Counter label='"A"' /><br /><br />
+            <Counter label='"B"' />
+        </SummaryProvider>
     )
 }

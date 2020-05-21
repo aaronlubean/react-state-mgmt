@@ -8,7 +8,7 @@ function Counter() {
             setCount(count + 1) // set the state w/o an updater function (count state might not be fresh!)
         }, 2000)
     }
-    //// 
+    //// Uncomment this increment and comment the one above to fix the problem
     // const increment = () => {
     //     setTimeout(() => {
     //         // pass in an updater function that receives fresh state and returns the new state

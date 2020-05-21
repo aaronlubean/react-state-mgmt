@@ -29,7 +29,7 @@ export default function App() {
                     <NavLink to="/useReducer">3 useReducer</NavLink>&nbsp;&nbsp;
                     <NavLink to="/useCounter">4 useCounter (custom hook)</NavLink>&nbsp;&nbsp;
                     <NavLink to="/useReducerPlus">5 useReducer+</NavLink>&nbsp;&nbsp;
-                    <NavLink to="/useCounterPlus">6 useCounter+ (custom hook)</NavLink>&nbsp;&nbsp;
+                    <NavLink to="/useCounterPlus">6 useCounter+</NavLink>&nbsp;&nbsp;
                     <NavLink to="/useCounterWithUseReducerDemo">7 useCounter w/useReducer</NavLink>&nbsp;&nbsp;
                     <NavLink to="/liftingStatePropDrillingDemo">8 lifting state & prop drilling</NavLink>&nbsp;&nbsp;
                     <NavLink to="/useReducerSharedDispatchDemo">9 useReducer shared dispatch</NavLink>&nbsp;&nbsp;

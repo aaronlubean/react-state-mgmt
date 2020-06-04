@@ -30,10 +30,10 @@ export default function App() {
                     <NavLink to="/useCounter">4 useCounter (custom hook)</NavLink>&nbsp;&nbsp;
                     <NavLink to="/useReducerPlus">5 useReducer+</NavLink>&nbsp;&nbsp;
                     <NavLink to="/useCounterPlus">6 useCounter+</NavLink>&nbsp;&nbsp;
-                    <NavLink to="/useCounterWithUseReducerDemo">7 useCounter w/useReducer</NavLink>&nbsp;&nbsp;
-                    <NavLink to="/liftingStatePropDrillingDemo">8 lifting state & prop drilling</NavLink>&nbsp;&nbsp;
-                    <NavLink to="/useReducerSharedDispatchDemo">9 useReducer shared dispatch</NavLink>&nbsp;&nbsp;
-                    <NavLink to="/contextDemo">10 context</NavLink>&nbsp;&nbsp;
+                    <NavLink to="/useCounterWithUseReducer">7 useCounter w/useReducer</NavLink>&nbsp;&nbsp;
+                    <NavLink to="/liftingStatePropDrilling">8 lifting state & prop drilling</NavLink>&nbsp;&nbsp;
+                    <NavLink to="/useReducerSharedDispatch">9 useReducer shared dispatch</NavLink>&nbsp;&nbsp;
+                    <NavLink to="/context">10 context</NavLink>&nbsp;&nbsp;
                 </div>
                 
                 <Switch>
@@ -58,16 +58,16 @@ export default function App() {
                     <Route path="/useCounterPlus">
                         <UseCounterPlusDemo />
                     </Route>
-                    <Route path="/useCounterWithUseReducerDemo">
+                    <Route path="/useCounterWithUseReducer">
                         <UseCounterWithUseReducerDemo />
                     </Route>
-                    <Route path="/liftingStatePropDrillingDemo">
+                    <Route path="/liftingStatePropDrilling">
                         <LiftingStatePropDrillingDemo />
                     </Route>
-                    <Route path="/useReducerSharedDispatchDemo">
+                    <Route path="/useReducerSharedDispatch">
                         <UseReducerSharedDispatchDemo />
                     </Route>
-                    <Route path="/contextDemo">
+                    <Route path="/context">
                         <ContextDemo />
                     </Route>
                 </Switch>

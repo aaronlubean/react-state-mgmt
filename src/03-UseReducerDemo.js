@@ -5,7 +5,8 @@ const initialState = { count: 0 }
 const reducer = (state, action) => {
     switch (action.type) {
         case 'DECREMENT':
-            return { count: state.count - 1 }
+            state.count = state.count - 1; // DON'T DO THIS - mutating state in reducer 
+            return { ...state };
         case 'INCREMENT':
             return { count: state.count + 1 }
         case 'RESET':
